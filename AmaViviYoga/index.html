@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmaViviYoga - Gestione Corsi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="loto-bg"></div>
+    <div class="container">
+        <header>
+            <h1>AmaViviYoga</h1>
+            <div id="calendar-display" class="card">
+                <h3>📅 Calendario Lezioni</h3>
+                <div id="schedule-list"></div>
+            </div>
+        </header>
+
+        <section id="auth-section" class="card">
+            <div id="login-form">
+                <h2>Accesso Allievi</h2>
+                <input type="email" id="login-email" placeholder="Email">
+                <input type="password" id="login-pass" placeholder="Password">
+                <button onclick="login()">Entra</button>
+                <p onclick="showRegistration()" class="link">Registrati (Solo nuovi iscritti)</p>
+            </div>
+            <div id="register-form" class="hidden">
+                <h2>Crea il tuo Account</h2>
+                <input type="text" id="reg-nome" placeholder="Nome">
+                <input type="text" id="reg-cognome" placeholder="Cognome">
+                <input type="email" id="reg-email" placeholder="Email">
+                <input type="password" id="reg-pass" placeholder="Password">
+                <button onclick="register()">Registrati</button>
+                <p onclick="showLogin()" class="link">Torna al login</p>
+            </div>
+            <p class="admin-link" onclick="accessAdmin()">Pannello Admin 🔒</p>
+        </section>
+
+        <section id="status-section" class="card hidden">
+            <h2>Ciao, <span id="u-name"></span></h2>
+            <div class="info-grid">
+                <p>Abbonamento di: <strong id="u-mese"></strong></p>
+                <p>Scadenza: <strong id="u-scadenza"></strong></p>
+                <div id="medico-alert" class="medico-box"></div>
+            </div>
+            <hr>
+            <h3>Conferma la tua presenza:</h3>
+            <div class="attendance-btns">
+                <button class="btn-presente" onclick="attendance('Presente')">Sarò presente ✅</button>
+                <button class="btn-assente" onclick="attendance('Assente')">Non verrò ❌</button>
+            </div>
+            <p id="attendance-msg" style="font-weight: bold; margin-top: 10px; color: #4b0082;"></p>
+            <button class="secondary" onclick="logout()">Esci</button>
+        </section>
+
+        <section id="admin-section" class="card hidden">
+            <h2>Gestione Master</h2>
+            
+            <div class="admin-tabs">
+                <button onclick="showTab('tab-allievi')">Allievi</button>
+                <button onclick="showTab('tab-calendario')">Calendario</button>
+            </div>
+
+            <div id="tab-allievi" class="tab-content">
+                <h4>Aggiungi Nuovo Allievo</h4>
+                <input type="text" id="adm-nome" placeholder="Nome">
+                <input type="text" id="adm-cognome" placeholder="Cognome">
+                <input type="email" id="adm-email" placeholder="Email">
+                <select id="adm-mese">
+                    <option value="Gennaio">Gennaio</option><option value="Febbraio">Febbraio</option>
+                    <option value="Marzo">Marzo</option><option value="Aprile">Aprile</option>
+                    <option value="Maggio">Maggio</option><option value="Giugno">Giugno</option>
+                    <option value="Luglio">Luglio</option><option value="Agosto">Agosto</option>
+                    <option value="Settembre">Settembre</option><option value="Ottobre">Ottobre</option>
+                    <option value="Novembre">Novembre</option><option value="Dicembre">Dicembre</option>
+                </select>
+                <input type="date" id="adm-scadenza" title="Scadenza">
+                <label><input type="checkbox" id="adm-medico"> Certificato Medico OK</label>
+                <button onclick="adminAddUser()">Salva in Anagrafica</button>
+                <hr>
+                <div id="admin-list"></div>
+            </div>
+
+            <div id="tab-calendario" class="tab-content hidden">
+                <h4>Aggiorna Orari</h4>
+                <input type="text" id="cal-giorno" placeholder="Giorno (Lunedì)">
+                <input type="text" id="cal-ora" placeholder="Ora (18:30)">
+                <input type="text" id="cal-corso" placeholder="Corso (Yoga)">
+                <button onclick="addSchedule()">Aggiungi al Calendario</button>
+                <div id="cal-list-admin"></div>
+            </div>
+
+            <button class="secondary" onclick="logout()">Chiudi Pannello</button>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
