@@ -1,1 +1,22 @@
-
+body { background: linear-gradient(135deg, #4b0082, #ff00ff); font-family: 'Segoe UI', Arial, sans-serif; margin: 0; min-height: 100vh; color: #333; }
+.loto-bg { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 250px; height: 250px; background: url('https://img.icons8.com/ios/500/ff00ff/lotus.png') no-repeat center; background-size: contain; opacity: 0.12; z-index: -1; }
+.container { width: 95%; max-width: 480px; margin: auto; padding: 20px 0; }
+.card { background: rgba(255, 255, 255, 0.95); padding: 20px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); margin-bottom: 20px; }
+h1 { color: white; text-align: center; text-transform: uppercase; letter-spacing: 3px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+input, select { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 10px; box-sizing: border-box; font-size: 16px; }
+button { background: #4b0082; color: white; border: none; padding: 14px; border-radius: 10px; cursor: pointer; width: 100%; font-weight: bold; font-size: 16px; transition: 0.3s; }
+button:active { transform: scale(0.98); }
+.secondary { background: #666; margin-top: 10px; }
+.hidden { display: none; }
+.medico-ok { color: #2e7d32; font-weight: bold; background: #e8f5e9; padding: 10px; border-radius: 8px; text-align: center; }
+.medico-no { color: #c62828; font-weight: bold; background: #ffebee; padding: 10px; border-radius: 8px; text-align: center; animation: blink 1.5s infinite; }
+@keyframes blink { 50% { opacity: 0.5; } }
+.schedule-item { background: #f9f9f9; padding: 12px; border-radius: 10px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; border-left: 5px solid #ff00ff; }
+.admin-link { color: white; text-align: center; margin-top: 25px; cursor: pointer; opacity: 0.6; font-size: 0.85rem; text-decoration: underline; }
+.user-row { border-bottom: 1px solid #eee; padding: 15px 0; font-size: 0.95rem; }
+.attendance-btns { display: flex; gap: 10px; margin-top: 15px; }
+.btn-presente { background: #28a745; }
+.btn-assente { background: #dc3545; }
+.admin-tabs { display: flex; gap: 10px; margin-bottom: 20px; }
+.admin-tabs button { background: #8e24aa; flex: 1; }
+.link { color: #4b0082; text-align: center; cursor: pointer; margin-top: 15px; font-weight: bold; }
