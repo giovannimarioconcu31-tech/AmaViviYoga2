@@ -1,1 +1,17 @@
+{
+  "short_name": "AmaViviYoga",
+  "name": "AmaViviYoga - Centro Yoga e Pilates",
+  "icons": [
+    {
+      "src": "https://img.icons8.com/ios/500/ff00ff/lotus.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#4b0082",
+  "background_color": "#4b0082"
+}
 
